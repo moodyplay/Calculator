@@ -3,10 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheed" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
-    <div class="calculator"></div>
+    <div class="main">
+        <div class="calculator">
+            <section class="screen">
+                <p id="equals-el">lubiue placki</p>
+            </section>
+            <section class="calc-buttons">
+                <div class="calc-button-row">
+                    <button class="calc-button double" id="btnClear">c</button>
+                    <button class="calc-button" id="btnDel">&larr;</button>
+                    <button class="calc-button" id="btnDivide">&div;</button>
+                </div>
+                <div class="calc-button-row">
+                    <button class="calc-button" id="btn7">7</button>
+                    <button class="calc-button" id="btn8">8</button>
+                    <button class="calc-button" id="btn9">9</button>
+                    <button class="calc-button" id="btnMultiply">&times;</button>
+                </div>
+                <div class="calc-button-row">
+                    <button class="calc-button" id="btn4">4</button>
+                    <button class="calc-button" id="btn5">5</button>
+                    <button class="calc-button" id="btn6">6</button>
+                    <button class="calc-button" id="btnSubtract">&minus;</button>
+                </div>
+                <div class="calc-button-row">
+                    <button class="calc-button" id="btn1">1</button>
+                    <button class="calc-button" id="btn2">2</button>
+                    <button class="calc-button" id="btn3">3</button>
+                    <button class="calc-button" id="btnAdd">&plus;</button>
+                </div>
+                <div class="calc-button-row">
+                    <button class="calc-button tripple" id="btn0">0</button>
+                    <button class="calc-button" id="btnCalculate">&equals;</button>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

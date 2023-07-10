@@ -1,0 +1,62 @@
+// Function to add two numbers
+function add(a, b) {
+  return a + b;
+}
+
+// Function to subtract two numbers
+function subtract(a, b) {
+  return a - b;
+}
+
+// Function to multiply two numbers
+function multiply(a, b) {
+  return a * b;
+}
+
+// Function to divide two numbers
+function divide(a, b) {
+  if (b === 0) {
+    return "Error: Division by zero";
+  }
+  return a / b;
+}
+
+// Function to update the input field with the result
+function updateResult(result) {
+  document.getElementById("result").value = result;
+}
+
+// Event listener for the calculate button
+document.getElementById("btnCalculate").addEventListener("click", function () {
+  const num1 = parseFloat(document.getElementById("num1").value);
+  const num2 = parseFloat(document.getElementById("num2").value);
+  const operator = document.getElementById("operator").value;
+  let result;
+
+  switch (operator) {
+    case "+":
+      result = add(num1, num2);
+      break;
+    case "-":
+      result = subtract(num1, num2);
+      break;
+    case "*":
+      result = multiply(num1, num2);
+      break;
+    case "/":
+      result = divide(num1, num2);
+      break;
+    default:
+      result = "Invalid operator";
+  }
+
+  updateResult(result);
+});
+
+// Event listener for the clear button
+document.getElementById("btnClear").addEventListener("click", function () {
+  document.getElementById("num1").value = "";
+  document.getElementById("num2").value = "";
+  document.getElementById("operator").value = "+";
+  updateResult("");
+});
