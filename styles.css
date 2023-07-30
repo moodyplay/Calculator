@@ -83,3 +83,6 @@ p{
     z-index: 2;
     
 }
+.calc-button:active{
+    transition: opacity 1000ms;
+}
