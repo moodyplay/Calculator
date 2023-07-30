@@ -83,6 +83,8 @@ p{
     z-index: 2;
     
 }
-.calc-button::after{
-    background-color: none;
+@media (hover: none) and (pointer: coarse) {
+    .touch::before{
+    background-color: rgba(255, 255, 255, 0.01);
+    }
 }
