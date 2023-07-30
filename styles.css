@@ -84,5 +84,5 @@ p{
     
 }
 .calc-button:active{
-    transition: opacity 1000ms;
+    opacity: 0;
 }
