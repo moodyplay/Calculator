@@ -84,5 +84,5 @@ p{
     
 }
 .calc-button::after{
-    opacity: 0;
+    background-color: none;
 }
