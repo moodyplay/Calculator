@@ -83,9 +83,6 @@ p{
     z-index: 2;
     
 }
-@media (max-width: 1441px) {
-    .calc-button::before{
-    background: none;
+.calc-button::after{
     opacity: 0;
-}
 }
