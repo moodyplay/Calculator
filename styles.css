@@ -86,3 +86,6 @@ p{
 .smartphone::before{
     background: rgba(255, 255, 255, 0.01);
 }
+.smartphone:active{
+    background-color:white;
+}
