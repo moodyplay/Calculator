@@ -85,6 +85,7 @@ p{
 }
 @media (hover: none) and (pointer: coarse) {
     .touch::before{
-    background: rgba(255, 255, 255, 0.01);
-    }
+    background: none;
+    opacity: 0;
+}
 }
