@@ -98,7 +98,7 @@ function isSmartphoneDevice() {
 
 // Sprawdzamy, czy mamy do czynienia z urządzeniem smartfonowym i dodajemy klasę .smartphone
 if (isSmartphoneDevice()) {
-  var elements = document.getElementsByClassName("element");
+  var elements = document.getElementsByClassName("calc-button");
   for (var i = 0; i < elements.length; i++) {
     elements[i].classList.add("smartphone");
   }
