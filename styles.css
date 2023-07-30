@@ -78,8 +78,11 @@ p{
     opacity: 0;
     position: absolute; 
     top: 0px;
-    transition: opacity 400ms ease-out 1ms;
+    transition: opacity 400ms;
     width: 100%;
     z-index: 2;
     
+}
+.smartphone{
+    background: none;
 }

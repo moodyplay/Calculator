@@ -87,3 +87,19 @@ const handleOnMouseMove = e => {
 for(const card of document.querySelectorAll(".calc-button")) {
   card.onmousemove = e => handleOnMouseMove(e);
 }
+
+// Plik: script.js
+
+// Funkcja sprawdzająca, czy mamy do czynienia z urządzeniem smartfonowym
+function isSmartphoneDevice() {
+  const userAgent = navigator.userAgent;
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+}
+
+// Sprawdzamy, czy mamy do czynienia z urządzeniem smartfonowym i dodajemy klasę .smartphone
+if (isSmartphoneDevice()) {
+  var elements = document.getElementsByClassName("element");
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].classList.add("smartphone");
+  }
+}
