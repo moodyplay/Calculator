@@ -84,6 +84,5 @@ p{
     
 }
 .smartphone{
-    background: none;
-    background-color: rgba(255, 255, 255, 0.01);;
+    background: rgba(255, 255, 255, 0.01);
 }
