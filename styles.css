@@ -83,8 +83,8 @@ p{
     z-index: 2;
     
 }
-@media (hover: none) and (pointer: coarse) {
-    .touch::before{
+@media (max-width: 1441px) {
+    .calc-button::before{
     background: none;
     opacity: 0;
 }
