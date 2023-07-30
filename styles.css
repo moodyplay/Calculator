@@ -81,5 +81,5 @@ p{
     transition: opacity 500ms;
     width: 100%;
     z-index: 2;
-    touch-action: manipulation;
+    
 }
