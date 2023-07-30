@@ -1,11 +1,13 @@
 body{
     margin:0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 .main{
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: aquamarine;
+    background: linear-gradient(to bottom right, rgb(0, 107, 149), rgb(157, 102, 0));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,15 +16,20 @@ body{
     
     height: auto;;
     width: 350px;
-    background-color:blue;
+    background-color: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     padding: 10px;
-    
+    border-radius: 10px;
     
 }
 .screen{
     height: 60px;
     width: 85%;
-    background-color: antiquewhite;
+    background-color: rgba(118, 118, 118, 0.1);
+    
+    color: white;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: end;
@@ -35,15 +42,43 @@ p{
 .calc-button-row{
     display: flex;
     justify-content: space-evenly;
-    margin: 3% 0;
+    margin: 2% 0;
 }
 .calc-button{
-    flex-basis: 20%;
-    height: 60px;
+    background-color: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    flex-basis: 22%;
+    height: 65px;
+    position:relative;
+    font-size: 20px;
+    
+    color:white;
+    cursor: pointer;
 }
 .double{
-    flex-basis: 44%;
+    flex-basis: 46%;
 }
 .tripple{
-    flex-basis: 68%;
+    flex-basis: 71%;
+}
+.calc-button:hover::before{
+    opacity: 1;
+}
+.calc-button::before{
+    background: radial-gradient(
+        200px circle at var(--mouse-x) var(--mouse-y),
+        rgba(228, 228, 228, 0.2),
+        transparent 40%
+    );
+    border-radius: 5px;
+    content: "";
+    height: 100%;
+    left: 0px;
+    opacity: 0;
+    position: absolute; 
+    top: 0px;
+    transition: opacity 500ms;
+    width: 100%;
+    z-index: 2;
 }
