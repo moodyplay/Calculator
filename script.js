@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         updateScreen();
       }, 800);
     }, 1300); // Opóźnienie 1000 ms (1 sekunda) między dodaniem i usunięciem klasy "show"
-  }, 300); // Opóźnienie 1000 ms (1 sekunda) przed dodaniem klasy "show"
+  }, 500); // Opóźnienie 1000 ms (1 sekunda) przed dodaniem klasy "show"
   
 });
 
