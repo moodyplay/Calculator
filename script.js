@@ -11,25 +11,24 @@ function updateScreen(){
     equalsEl.textContent = screenValue;
 }
 document.addEventListener("DOMContentLoaded", function() {
-  
-  
-  // Ustawienie animacji powitania po 1 sekundzie
+
   setTimeout(function() {
     equalsEl.classList.add("show");
     
     setTimeout(function() {
       equalsEl.classList.remove("show");
+      
       setTimeout(function() {
         equalsEl.classList.add("show");
-        
         screenValue = "0";
         updateScreen();
-      }, 800);
-    }, 1300); // Opóźnienie 1000 ms (1 sekunda) między dodaniem i usunięciem klasy "show"
-  }, 500); // Opóźnienie 1000 ms (1 sekunda) przed dodaniem klasy "show"
+        screenValue = "";
+
+      }, 700);
+    }, 1000); 
+  }, 700);
   
 });
-
 
 for(let i = 0; i < buttonsEl.length; i++){
     buttonsEl[i].addEventListener("click", function(){
