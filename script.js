@@ -1,31 +1,15 @@
 const equalsEl = document.getElementById("equals-el");
-
-let buttonsEl = document.querySelectorAll(".calc-button:not(.not)");
-let equalsBtn = document.getElementById("btnCalculate")
-equalsEl.textContent = "0";
+const buttonsEl = document.querySelectorAll(".calc-button:not(.not)");
+const equalsBtn = document.getElementById("btnCalculate")
+equalsEl.textContent = "Simple Calculator";
 let screenValue = ""
-let btnClearEl = document.getElementById("btnClear")
-let btnDelEl = document.getElementById("btnDel")
-
-
-
-
-// buttonsEl.addEventListener("click", function(){
-//     let num = buttonsEl.textContent;
-//     console.log(buttonsEl[num]);
-//     console.log("dziaa")
-// });
-
-
-// buttonsEl.array.forEach(element => {
-//     element.addEventListener("click", btnclk);
-// });
+const btnClearEl = document.getElementById("btnClear")
+const btnDelEl = document.getElementById("btnDel")
+const isAlphaNumeric = /^[a-zA-Z0-9]+$/;
 
 function updateScreen(){
     equalsEl.textContent = screenValue;
 }
-
-
 
 for(let i = 0; i < buttonsEl.length; i++){
     buttonsEl[i].addEventListener("click", function(){
@@ -39,12 +23,9 @@ for(let i = 0; i < buttonsEl.length; i++){
 equalsBtn.addEventListener("click", function(){
     if (screenValue !== "") {
         try {
-          const result = eval(screenValue);
-          screenValue = result;
-          screenValue = screenValue.toString();
-          console.log(typeof screenValue)
-          if(screenValue=="Infinity"){
-            screenValue = "Nie dziel przez zero";
+          screenValue = eval(screenValue).toString();
+      if (screenValue === "Infinity") {
+        screenValue = "Nie dziel przez zero";
           }
           updateScreen();
         } catch (error) {
@@ -59,19 +40,16 @@ btnClearEl.addEventListener("click", function(){
   screenValue = "";
 })
 btnDelEl.addEventListener("click", function(){
-  console.log(screenValue)
-  if(screenValue.length > 1){
-    let newscreenValue = screenValue.slice(0, -1); 
-    screenValue = newscreenValue;
+  if(screenValue.length > 1 && isAlphaNumeric.test(screenValue) ){
+    screenValue = screenValue.slice(0, -1); 
+    
     updateScreen();
-  }else if (screenValue.length = 1){
+  }else {
     screenValue = "0";
     updateScreen();
     screenValue = "";
   }
-  console.log(screenValue)
 })
-
 
 const handleOnMouseMove = e => {
   const { currentTarget: target } = e;
@@ -88,15 +66,11 @@ for(const card of document.querySelectorAll(".calc-button")) {
   card.onmousemove = e => handleOnMouseMove(e);
 }
 
-// Plik: script.js
-
-// Funkcja sprawdzająca, czy mamy do czynienia z urządzeniem smartfonowym
 function isSmartphoneDevice() {
   const userAgent = navigator.userAgent;
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
 }
 
-// Sprawdzamy, czy mamy do czynienia z urządzeniem smartfonowym i dodajemy klasę .smartphone
 if (isSmartphoneDevice()) {
   var elements = document.getElementsByClassName("calc-button");
   for (var i = 0; i < elements.length; i++) {
