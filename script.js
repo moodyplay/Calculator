@@ -1,7 +1,7 @@
 const equalsEl = document.getElementById("equals-el");
 const buttonsEl = document.querySelectorAll(".calc-button:not(.not)");
 const equalsBtn = document.getElementById("btnCalculate")
-equalsEl.textContent = "Simple Calculator";
+
 let screenValue = ""
 const btnClearEl = document.getElementById("btnClear")
 const btnDelEl = document.getElementById("btnDel")
@@ -10,6 +10,26 @@ const isAlphaNumeric = /^[a-zA-Z0-9]+$/;
 function updateScreen(){
     equalsEl.textContent = screenValue;
 }
+document.addEventListener("DOMContentLoaded", function() {
+  
+  
+  // Ustawienie animacji powitania po 1 sekundzie
+  setTimeout(function() {
+    equalsEl.classList.add("show");
+    
+    setTimeout(function() {
+      equalsEl.classList.remove("show");
+      setTimeout(function() {
+        equalsEl.classList.add("show");
+        
+        screenValue = "0";
+        updateScreen();
+      }, 1000);
+    }, 1000); // Opóźnienie 1000 ms (1 sekunda) między dodaniem i usunięciem klasy "show"
+  }, 1000); // Opóźnienie 1000 ms (1 sekunda) przed dodaniem klasy "show"
+  
+});
+
 
 for(let i = 0; i < buttonsEl.length; i++){
     buttonsEl[i].addEventListener("click", function(){
@@ -77,3 +97,4 @@ if (isSmartphoneDevice()) {
     elements[i].classList.add("smartphone");
   }
 }
+
