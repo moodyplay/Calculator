@@ -5,7 +5,7 @@ const equalsBtn = document.getElementById("btnCalculate")
 let screenValue = ""
 const btnClearEl = document.getElementById("btnClear")
 const btnDelEl = document.getElementById("btnDel")
-const isAlphaNumeric = /^[a-zA-Z0-9]+$/;
+const isAlphaNumeric = /^[a-zA-Z0-9-.*+/]+$/;
 
 function updateScreen(){
     equalsEl.textContent = screenValue;
@@ -34,7 +34,11 @@ for(let i = 0; i < buttonsEl.length; i++){
     buttonsEl[i].addEventListener("click", function(){
         let num = buttonsEl[i].textContent;
         console.log(num);
+        if(screenValue === "" && num === "."){
+          screenValue = "0."
+        }else{
         screenValue += num;
+      }
         updateScreen();
         console.log(screenValue)
     });
@@ -59,7 +63,7 @@ btnClearEl.addEventListener("click", function(){
   screenValue = "";
 })
 btnDelEl.addEventListener("click", function(){
-  if(screenValue.length > 1 && isAlphaNumeric.test(screenValue) ){
+  if(screenValue.length > 1 && isAlphaNumeric.test(screenValue)){
     screenValue = screenValue.slice(0, -1); 
     
     updateScreen();
