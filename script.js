@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", function() {
         updateScreen();
         screenValue = "";
 
-      }, 700);
+      }, 500);
     }, 1000); 
-  }, 700);
+  }, 500);
   
 });
 
